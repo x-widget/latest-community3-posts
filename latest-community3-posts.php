@@ -22,7 +22,7 @@ $limit = 4;
 $list = g::posts( array(
 			"bo_table" 	=>	$bo_table,
 			"limit"		=>	$limit,
-			//"select"	=>	"idx,domain,bo_table,wr_id,wr_parent,wr_is_comment,wr_comment,ca_name,wr_datetime,wr_hit,wr_good,wr_nogood,wr_name,mb_id,wr_subject,wr_content"
+			"select"	=>	"idx,domain,bo_table,wr_id,wr_parent,wr_is_comment,wr_comment,ca_name,wr_datetime,wr_hit,wr_good,wr_nogood,wr_name,mb_id,wr_subject,wr_content"
 				)
 		);	
 ?>
@@ -49,7 +49,7 @@ $list = g::posts( array(
 			$no_of_posts = count($list);
 			foreach ( $list as $li ) {
 				
-				$subject = $li['subject'];
+				$post_subject = $li['subject'];
 				$url = $li['href'];
 				$no_comment = '';
 				if ( !$comment_count = strip_tags($li['wr_comment']) ) {
@@ -65,11 +65,11 @@ $list = g::posts( array(
 						</div>
 						</td>
 						<td>
-							<a href='<?=$url?>' class='content-community-3'><?=$subject?></a>
+							<a href='<?=$li['url']?>' class='content-community-3'><?=$post_subject?></a>
 						</td>
 						<td align='right'>
 							<span class='no-of-comments $no_comment'>
-							<a href='<?=$url?>'>[<?=$comment_count?>]</a>
+							[<?=$comment_count?>]
 						</span>
 						</td>				
 				<?$i++;?>
