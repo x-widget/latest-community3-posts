@@ -15,7 +15,8 @@ if( $widget_config['title'] ) $title = $widget_config['title'];
 else $title = 'no title';
 
 if( $widget_config['forum1'] ) $_bo_table = $widget_config['forum1'];
-else $_bo_table = bo_table(1);
+else $_bo_table = $widget_config['default_forum_id'];
+
 
 $limit = 4;
 
