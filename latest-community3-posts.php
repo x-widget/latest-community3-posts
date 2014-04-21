@@ -14,13 +14,13 @@ if($file_headers[0] == 'HTTP/1.1 404 Not Found') {
 if( $widget_config['title'] ) $title = $widget_config['title'];
 else $title = 'no title';
 
-if( $widget_config['forum1'] ) $bo_table = $widget_config['forum1'];
-else $bo_table = bo_table(1);
+if( $widget_config['forum1'] ) $post_bo_table = $widget_config['forum1'];
+else $post_bo_table = bo_table(1);
 
 $limit = 4;
 
 $list = g::posts( array(
-			"bo_table" 	=>	$bo_table,
+			"bo_table" 	=>	$post_bo_table,
 			"limit"		=>	$limit,
 			"select"	=>	"idx,domain,bo_table,wr_id,wr_parent,wr_is_comment,wr_comment,ca_name,wr_datetime,wr_hit,wr_good,wr_nogood,wr_name,mb_id,wr_subject,wr_content"
 				)
@@ -36,7 +36,7 @@ $list = g::posts( array(
 						<span class='label'><a href='<?=G5_BBS_URL?>/board.php?bo_table=<?=$bo_table?>'><?=cut_str($title,15,"...")?></a></span>
 					</td>
 					<td align='right'>
-						<div class='posts-more'><a href="<?=g::url()?>/bbs/board.php?bo_table=<?=$bo_table?>" >자세히</a></div>
+						<div class='posts-more'><a href="<?=g::url()?>/bbs/board.php?bo_table=<?=$post_bo_table?>" >자세히</a></div>
 					</td>
 				</tr>
 			</table>
