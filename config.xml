@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <config>
+	<id>widget latest-community3-posts</id>
 	<type>widget</type>
 	<category>
 		<main>post</main>
